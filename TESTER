@@ -1,0 +1,9 @@
+local player = game:GetService("Players").LocalPlayer -- Get the player object for the current player
+
+while true do
+    local players = game:GetService("Players"):GetPlayers() -- Get an array of all players in the game
+    local targetPlayer = players[math.random(1, #players)] -- Select a random player from the array
+    local targetPosition = targetPlayer.Character.HumanoidRootPart.Position -- Get the position of the target player's root part
+    player.Character:MoveTo(targetPosition) -- Move the player's character to the target player's position
+    wait(5) -- Wait 5 seconds before teleporting again
+end
